@@ -1,9 +1,9 @@
 class Tfschema < Formula
   desc "A schema inspector for Terraform providers."
   homepage "https://github.com/minamijoyo/tfschema"
-  url "https://github.com/minamijoyo/tfschema/releases/download/v0.1.2/tfschema_0.1.2_darwin_amd64.tar.gz"
-  version "0.1.2"
-  sha256 "62e8364ce9c9a3f4c38d88847156eee1c2b76c74a80b7c69990d361f0ce54377"
+  url "https://github.com/minamijoyo/tfschema/releases/download/v0.2.0/tfschema_0.2.0_darwin_amd64.tar.gz"
+  version "0.2.0"
+  sha256 "20a0dfa7fb8ce35890716817d22b53cadc667c148724c61a08b692d666c5e49b"
 
   def install
     bin.install "tfschema"
