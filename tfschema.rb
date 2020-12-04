@@ -2,17 +2,16 @@
 class Tfschema < Formula
   desc "A schema inspector for Terraform providers."
   homepage "https://github.com/minamijoyo/tfschema"
-  version "0.5.0"
+  version "0.6.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/minamijoyo/tfschema/releases/download/v0.5.0/tfschema_0.5.0_darwin_amd64.tar.gz"
-    sha256 "b3232204d7c03ebd17ba9cdfc1876cdea7f9c39f77694a130dcf87920106885c"
-  elsif OS.linux?
-    if Hardware::CPU.intel?
-      url "https://github.com/minamijoyo/tfschema/releases/download/v0.5.0/tfschema_0.5.0_linux_amd64.tar.gz"
-      sha256 "8420a1c51662111e1f58f38a7817f7c45a932f518f6ec4d0afe3ac7aaef67634"
-    end
+    url "https://github.com/minamijoyo/tfschema/releases/download/v0.6.0/tfschema_0.6.0_darwin_amd64.tar.gz"
+    sha256 "b74558e6fc06be5023d784f72e29ba2b5effabd8f6a06b5d8b564ca7a5259615"
+  end
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/minamijoyo/tfschema/releases/download/v0.6.0/tfschema_0.6.0_linux_amd64.tar.gz"
+    sha256 "15870eacf4dddc29283b269b90f0937e024fce3744d81781d62bcf5d6713c613"
   end
 
   def install
