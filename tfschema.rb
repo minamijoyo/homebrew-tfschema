@@ -5,12 +5,12 @@
 class Tfschema < Formula
   desc "A schema inspector for Terraform providers."
   homepage "https://github.com/minamijoyo/tfschema"
-  version "0.7.1"
+  version "0.7.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.1/tfschema_0.7.1_darwin_amd64.tar.gz"
-      sha256 "67a41aae98b8581a05ecb64d8bf6a808a2ce6c21ad5bac976d245b4d64736cee"
+      url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.2/tfschema_0.7.2_darwin_amd64.tar.gz"
+      sha256 "bedcf4e7186c44c8d9d62516631ea5505a41b1c8a91562ee14cc7b635156ddfa"
 
       def install
         bin.install "tfschema"
@@ -20,8 +20,8 @@ class Tfschema < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.1/tfschema_0.7.1_linux_amd64.tar.gz"
-      sha256 "d5089ce0f1d841bd00d71dc949e531e67fa5efc79c4894913326640d0c00ffb7"
+      url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.2/tfschema_0.7.2_linux_amd64.tar.gz"
+      sha256 "cf7488b5f257f95f6ade5bbac1f59f0cbcf3c4fa105e3d48befb400730ca2078"
 
       def install
         bin.install "tfschema"
