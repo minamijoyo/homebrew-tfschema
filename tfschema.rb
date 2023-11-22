@@ -5,20 +5,20 @@
 class Tfschema < Formula
   desc "A schema inspector for Terraform providers."
   homepage "https://github.com/minamijoyo/tfschema"
-  version "0.7.6"
+  version "0.7.7"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.6/tfschema_0.7.6_darwin_arm64.tar.gz"
-      sha256 "f02bd56692c3d2dde83e700f2482ce0d482a9afe3611a6eaeb3c5ed7ae880181"
+      url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.7/tfschema_0.7.7_darwin_arm64.tar.gz"
+      sha256 "37035b5a9fa01085ec647b3e9d0ce53d8dc7993ab1408773110872b3ba7375f1"
 
       def install
         bin.install "tfschema"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.6/tfschema_0.7.6_darwin_amd64.tar.gz"
-      sha256 "247d6b298e4493e9303d372d773fda57c1c17aaf6db88b6ab6b845a0e8e8bb64"
+      url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.7/tfschema_0.7.7_darwin_amd64.tar.gz"
+      sha256 "6796af9256159b445e04c0c24b20e0644067f9a3d9d815a3fcaed0f644d4c1da"
 
       def install
         bin.install "tfschema"
@@ -28,16 +28,16 @@ class Tfschema < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.6/tfschema_0.7.6_linux_arm64.tar.gz"
-      sha256 "542d2275fa40cc487ab8d1617870c5d91a32188dc175923c470e6cea76651a1f"
+      url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.7/tfschema_0.7.7_linux_arm64.tar.gz"
+      sha256 "ac8d03599e3b8dfd7ed33065059d4cb8ebc280a3bbcf3a97c82636f0423a302a"
 
       def install
         bin.install "tfschema"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.6/tfschema_0.7.6_linux_amd64.tar.gz"
-      sha256 "ba0e65174e21b7caf8a6fd2d17fb72ab95e30ce9b2789d72a8398332ee3ea20f"
+      url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.7/tfschema_0.7.7_linux_amd64.tar.gz"
+      sha256 "fe463f9a95e75077394868d15f8cfb257ec7707c6c859bd442ea7062a573179d"
 
       def install
         bin.install "tfschema"
