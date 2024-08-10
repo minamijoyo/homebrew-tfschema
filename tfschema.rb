@@ -5,20 +5,20 @@
 class Tfschema < Formula
   desc "A schema inspector for Terraform / OpenTofu providers."
   homepage "https://github.com/minamijoyo/tfschema"
-  version "0.7.8"
+  version "0.7.9"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.8/tfschema_0.7.8_darwin_arm64.tar.gz"
-      sha256 "f9f115f43177a0306c2ffdac4242932555eacb2f2fc9b6dc67e1665e13036f9c"
+    on_intel do
+      url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.9/tfschema_0.7.9_darwin_amd64.tar.gz"
+      sha256 "bfb07ac3748009e57c786633640400a56368fba73c149a7798160afd4e9ae131"
 
       def install
         bin.install "tfschema"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.8/tfschema_0.7.8_darwin_amd64.tar.gz"
-      sha256 "881a3729f7ef29e923e9a27eed4a02ad4e33f7ad1aa5106013503db5a70d10d8"
+    on_arm do
+      url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.9/tfschema_0.7.9_darwin_arm64.tar.gz"
+      sha256 "d72142fa5a909e8339dbb7d3211ca4ebc5d39bc591b4a961d2ffe3f9e8596f62"
 
       def install
         bin.install "tfschema"
@@ -27,20 +27,24 @@ class Tfschema < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.8/tfschema_0.7.8_linux_arm64.tar.gz"
-      sha256 "e223c3451a94fca0591828934b4308090b6478828c1af9e1a74639d3a4b58ea6"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.9/tfschema_0.7.9_linux_amd64.tar.gz"
+        sha256 "f980a46bc4e05f5a8742cf40daee72810590a5472afd627cc29921a23482caf5"
 
-      def install
-        bin.install "tfschema"
+        def install
+          bin.install "tfschema"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.8/tfschema_0.7.8_linux_amd64.tar.gz"
-      sha256 "a720e3c94d60db2ab6ec14a6c31d5bbdf8cef44d895874d654f789e96ef15428"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.9/tfschema_0.7.9_linux_arm64.tar.gz"
+        sha256 "739485cc7660525ec0bd916fda2a819a7db75c409770c07b745a236df968cda6"
 
-      def install
-        bin.install "tfschema"
+        def install
+          bin.install "tfschema"
+        end
       end
     end
   end
