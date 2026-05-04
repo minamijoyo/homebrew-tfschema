@@ -5,46 +5,40 @@
 class Tfschema < Formula
   desc "A schema inspector for Terraform / OpenTofu providers."
   homepage "https://github.com/minamijoyo/tfschema"
-  version "0.7.9"
+  version "0.7.10"
 
   on_macos do
-    on_intel do
-      url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.9/tfschema_0.7.9_darwin_amd64.tar.gz"
-      sha256 "bfb07ac3748009e57c786633640400a56368fba73c149a7798160afd4e9ae131"
+    if Hardware::CPU.intel?
+      url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.10/tfschema_0.7.10_darwin_amd64.tar.gz"
+      sha256 "d7ca9b70138ccf0670cdc6a41dc744bf6d491081a021f904f59b5478292fc2a0"
 
-      def install
+      define_method(:install) do
         bin.install "tfschema"
       end
     end
-    on_arm do
-      url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.9/tfschema_0.7.9_darwin_arm64.tar.gz"
-      sha256 "d72142fa5a909e8339dbb7d3211ca4ebc5d39bc591b4a961d2ffe3f9e8596f62"
+    if Hardware::CPU.arm?
+      url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.10/tfschema_0.7.10_darwin_arm64.tar.gz"
+      sha256 "b9c21fc486c083041b97532526bcaa153f7b3282633279555b39d75b2afa310a"
 
-      def install
+      define_method(:install) do
         bin.install "tfschema"
       end
     end
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.9/tfschema_0.7.9_linux_amd64.tar.gz"
-        sha256 "f980a46bc4e05f5a8742cf40daee72810590a5472afd627cc29921a23482caf5"
-
-        def install
-          bin.install "tfschema"
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.10/tfschema_0.7.10_linux_amd64.tar.gz"
+      sha256 "52b9316e6519859da76f0571611b7a319aa3f47c5cd43bf1519e9fae8fd27b8b"
+      define_method(:install) do
+        bin.install "tfschema"
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.9/tfschema_0.7.9_linux_arm64.tar.gz"
-        sha256 "739485cc7660525ec0bd916fda2a819a7db75c409770c07b745a236df968cda6"
-
-        def install
-          bin.install "tfschema"
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/minamijoyo/tfschema/releases/download/v0.7.10/tfschema_0.7.10_linux_arm64.tar.gz"
+      sha256 "6a170b51469199c8d05ec00726039648c7e4d4586989d16c2ef2e758e4ac46e8"
+      define_method(:install) do
+        bin.install "tfschema"
       end
     end
   end
